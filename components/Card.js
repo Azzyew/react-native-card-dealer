@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { Image } from '../styles/page';
+import { Image, Text } from 'react-native';
 
 const Card = (props) => {
 
-    const cardImg = useState(state?.drawn?.image);
-    const cardName = useState(state?.drawn?.name); 
-    
+    const cardImg = useState(props.image);
+    const cardName = useState(props.name); 
+
     return (
-        <Image src={cardImg} alt={cardName}/>
+        <>
+        <Image source={{uri: cardImg[0]}} alt={cardName} style={{height: 200, width: 150}}/>
+        </>
     );
 }
 

@@ -4,15 +4,14 @@ export const Container = styled.View`
   flex: 1;
   background-color: #58405d;
   align-items: center;
-  justify-content: center;
 `;
 
 export const Title = styled.Text`
-  font-size: 18px;
+  font-size: 44;
   color: #EABA40;
   font-weight: 500;
+  flex: 1;
 `;
 
-export const Image = styled.Image`
-
+export const ButtonContainer = styled.View`
 `;

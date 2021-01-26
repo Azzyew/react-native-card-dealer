@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import { Button } from 'react-native';
 import axios from 'axios';
+import { Title, ButtonContainer } from '../styles/page';
 
 const Deck = () => {
 
@@ -41,20 +42,29 @@ const Deck = () => {
         }     
     };
 
-    const cards = useState(state?.drawn?.map(c => (
-        <Card name={c.name} image={c.image}/>
-    )));
+    const renderCards = () => {
+        return(
+            drawn?.map(c => (
+            <Card name={c.name} image={c.image}/> 
+        )
+        
+    ))}
 
     return (
         <div>
-            <h1>Card Dealer</h1>
+            <Title>Card Dealer</Title>
+
+            {renderCards()}
+
+            <ButtonContainer>
             <Button
                 onPress={handleCard}
                 title="Random Card"
                 color="#EABA40"
                 accessibilityLabel="Get a new random card"
-            />
-            {cards}
+            />   
+            </ButtonContainer>
+            
         </div>
     );
 }
