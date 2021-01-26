@@ -12,3 +12,7 @@ export const Title = styled.Text`
   color: #EABA40;
   font-weight: 500;
 `;
+
+export const Image = styled.Image`
+
+`;
