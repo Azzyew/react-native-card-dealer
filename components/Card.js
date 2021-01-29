@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
-import { Image, Text } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { CardImage } from '../styles/page';
 
 const Card = (props) => {
 
     const cardImg = useState(props.image);
-    const cardName = useState(props.name); 
+    const cardName = useState(props.name);
+
+    const [transform, setTransform] = useState('');
+
+    useEffect(() => {
+        let angle = Math.random() * 90 - 45;
+        let x = Math.random() * 40 - 20;
+        let y = Math.random() * 40 - 20;
+        let tform = `translate(${x}px, ${y}px) rotate(${angle}deg)`;
+        setTransform(tform);
+    }, []);
 
     return (
-        <>
-        <Image source={{uri: cardImg[0]}} alt={cardName} style={{height: 200, width: 150}}/>
-        </>
+        <CardImage source={{uri: cardImg[0]}} alt={cardName} style={{ transform: transform}} />
     );
 }
 

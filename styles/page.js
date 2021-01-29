@@ -14,4 +14,17 @@ export const Title = styled.Text`
 `;
 
 export const ButtonContainer = styled.View`
+  display: flex;
+  position: absolute;
+  left: 127px;
+  bottom: 40px;
+`;
+
+export const CardImage = styled.Image`
+  height: 200;
+  width: 150;
+  position: absolute;
+  margin-top: 100px;
+  left: 110px;
+  right: 60px;
 `;

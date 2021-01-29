@@ -45,26 +45,25 @@ const Deck = () => {
     const renderCards = () => {
         return(
             drawn?.map(c => (
-            <Card name={c.name} image={c.image}/> 
+            <Card key={c.id} name={c.name} image={c.image}/> 
         )
-        
     ))}
 
     return (
         <div>
             <Title>Card Dealer</Title>
 
+            <ButtonContainer>
+                <Button
+                    onPress={handleCard}
+                    title="Random Card"
+                    color="#EABA40"
+                    accessibilityLabel="Get a new random card"
+                />   
+            </ButtonContainer>
+
             {renderCards()}
 
-            <ButtonContainer>
-            <Button
-                onPress={handleCard}
-                title="Random Card"
-                color="#EABA40"
-                accessibilityLabel="Get a new random card"
-            />   
-            </ButtonContainer>
-            
         </div>
     );
 }
